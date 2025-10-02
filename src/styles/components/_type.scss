@@ -1,29 +1,82 @@
+@keyframes animGauche {
+  from { transform: translateX(-3em); } /* Point de départ */
+  to { transform: translateX(60vw) translateY(200%) ; } /* Déplacement de 100px vers la droite */
+}
+@keyframes animDroit {
+  from { transform: translateX(60vw); } /* Point de départ */
+  to { transform: translateX(-3vw) translateY(200%) ; } /* Déplacement de 100px vers la droite */
+}
 body {
   font-family: "Liter", sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: $c-text;
-  margin: 1.7em 1em;
+  background-color: #ffe4c4;
+  margin: 1.7em 2em;
 }
+body::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  //left: -1em;
+  background: #ffc66b;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  filter: blur(3rem);
+  z-index: -1;
+  position: fixed;
+  //transition: top 0.5s ease-out, left 0.5s ease-out;
+  animation: animGauche 5s forwards infinite alternate;
+
+}
+body::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3em;
+  //left: -1em;
+  background: #6bf8ff;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  filter: blur(3rem);
+  z-index: -1;
+  position: fixed;
+  //transition: top 0.5s ease-out, left 0.5s ease-out;
+  animation: animDroit 3s forwards infinite alternate;
+}
+
 
 .liter-regular {
   font-family: "Liter", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.titleH1{
+.title{
+  line-height: 1.4;
+}
+
+.title--H1{
+  font-family: "Bungee", sans-serif;
   font-size: 83px;
   margin-bottom: 48px;
 }
 
-.titleH2{
+.title--H2{
   font-size: 48px;
   margin-bottom: 28px;
   text-wrap: balance;
 }
 
-.titleH3{
+.title--H3{
   font-size: 28px;
   margin-bottom: 16px;
 }
@@ -39,24 +92,30 @@ body {
   font-style: italic;
 }
 
+
+
 @media (min-width: 600px){
+  @keyframes animGauche {
+    from { transform: translateX(-10em); } /* Point de départ */
+  }
+
   body {
     font-size: 18px;
     margin: 1.7em 5em;
   }
   
-  .titleH1{
+  .title--H1{
     font-size: 94px;
     margin-bottom: 54px;
   }
   
-  .titleH2{
+  .title--H2{
     font-size: 54px;
     margin-bottom: 31px;
     text-wrap: balance;
   }
   
-  .titleH3{
+  .title--H3{
     font-size: 31px;
     margin-bottom: 18px;
   }
@@ -68,6 +127,16 @@ body {
 }
 
 @media (min-width: 950px){
+
+  @keyframes animGauche {
+    from { transform: translateX(-13em); } /* Point de départ */
+    to { transform: translateX(60vw) translateY(220%) ; } /* Déplacement de 100px vers la droite */
+  }
+  @keyframes animDroit {
+    from { transform: translateX(60vw); } /* Point de départ */
+    to { transform: translateX(-13vw) translateY(220%) ; } /* Déplacement de 100px vers la droite */
+  }
+
   body {
     font-family: "Liter", sans-serif;
     font-size: $size-text;
@@ -82,18 +151,18 @@ body {
     font-style: normal;
   }
   
-  .titleH1{
+  .title--H1{
     font-size: 109px;
     margin-bottom: 63px;
   }
   
-  .titleH2{
+  .title--H2{
     font-size: 63px;
     margin-bottom: 36px;
     text-wrap: balance;
   }
   
-  .titleH3{
+  .title--H3{
     font-size: 36px;
     margin-bottom: 21px;
   }
