@@ -61,28 +61,30 @@ body::before{
 }
 
 .title{
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .title--H1{
   font-family: "Bungee", sans-serif;
   font-size: 83px;
-  margin-bottom: 48px;
+  margin-bottom: 83px;
+  line-height: 1.0;
+
 }
 
 .title--H2{
   font-size: 48px;
-  margin-bottom: 28px;
+  margin-bottom: 83px;
   text-wrap: balance;
 }
 
 .title--H3{
   font-size: 28px;
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 
 .parag{
-  margin-bottom: 28px;
+  margin-bottom: 83px;
 }
 
 .lien{
@@ -92,8 +94,45 @@ body::before{
   font-style: italic;
 }
 
+.popup__btn{
+  padding: 1em 2em;
+  background-color: $c-text;
+  color: #ffe4c4;
+  border-style: none;
+  box-shadow: 3px 5px 0.5em #ffffff;
+  border-radius: 10px;
+}
+.popup__btn--fermer{
+  font-size: 28px;
+  padding: 0px;
+  background-color: transparent;
+  color: $c-text;
+  box-shadow: none;
+  border-radius: 0px;
+  margin-left: auto;
+  display: flex;
+
+}
 
 
+.popup__vue{
+  display: none;
+
+}
+.popup__style{
+  position: fixed;
+  background-color: #ffe4c4;
+  border: 2px solid $c-text;
+  border-radius: 10px;
+  padding: 16px;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  z-index: 10; 
+}
+.popup__parag{
+  margin-bottom: 1.7em;
+}
 @media (min-width: 600px){
   @keyframes animGauche {
     from { transform: translateX(-10em); } /* Point de départ */
@@ -106,24 +145,36 @@ body::before{
   
   .title--H1{
     font-size: 94px;
-    margin-bottom: 54px;
+    margin-bottom: 94px;
   }
   
   .title--H2{
     font-size: 54px;
-    margin-bottom: 31px;
+    margin-bottom: 94px;
     text-wrap: balance;
   }
   
   .title--H3{
     font-size: 31px;
-    margin-bottom: 18px;
-  }
-  
-  .parag{
     margin-bottom: 31px;
   }
   
+  .parag{
+    margin-bottom: 94px;
+  }
+  .popup__style{
+    padding: 18px;
+    top: 35%;
+    left: 15%;
+    right: 15%;
+    padding: 18px;
+  }
+  .popup__btn{
+    font-size: 18px;
+  }
+  .popup__parag{
+    margin-bottom: 1.7em;
+  }
 }
 
 @media (min-width: 950px){
@@ -153,22 +204,22 @@ body::before{
   
   .title--H1{
     font-size: 109px;
-    margin-bottom: 63px;
+    margin-bottom: 109px;
   }
   
   .title--H2{
     font-size: 63px;
-    margin-bottom: 36px;
+    margin-bottom: 109px;
     text-wrap: balance;
   }
   
   .title--H3{
     font-size: 36px;
-    margin-bottom: 21px;
+    margin-bottom: 36px;
   }
   
   .parag{
-    margin-bottom: 36px;
+    margin-bottom: 109px;
   }
   
   .lien{
@@ -180,5 +231,20 @@ body::before{
     &:hover{
       text-decoration: underline;
     }
+  }
+  .popup__style{
+    top: 25%;
+    padding: 21px;
+    left: 25%;
+    right: 25%;
+  }
+  .popup__btn{
+    font-size: 21px;
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  .popup__parag{
+    margin-bottom: 1.7em;
   }
 }
